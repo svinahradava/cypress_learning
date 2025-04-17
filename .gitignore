@@ -1,0 +1,29 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cypress files
+cypress/videos/
+cypress/screenshots/
+cypress/.cache/
+cypress/coverage/
+cypress.env.json
+
+# Cypress reports (optional reporters like mochawesome)
+cypress/reports/
+mochawesome-report/
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.test
