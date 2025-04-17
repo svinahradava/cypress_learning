@@ -12,7 +12,7 @@ npx cypress run
 
 npx cypress open
 
-
 Documentation
+
 - [Git Workflow Strategy](./docs/git-strategy.md)
 - [VS Code Shortcuts](./docs/VSCode-hotkeys.md)

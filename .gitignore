@@ -14,6 +14,8 @@ cypress.env.json
 # Cypress reports (optional reporters like mochawesome)
 cypress/reports/
 mochawesome-report/
+cypress/screenshots
+cypress/videos
 
 # IDE/editor settings
 .vscode/

@@ -9,7 +9,6 @@ We use a simple and effective Git strategy **without a `develop` branch**. All d
 - `main` — Stable, production-ready code.
 - `feature/*` — For developing new features.
 
-
 ## Feature Workflow
 
 1. Each new task gets its own branch:  
@@ -28,9 +27,9 @@ We use a simple and effective Git strategy **without a `develop` branch**. All d
 
 ## Branch Naming Conventions
 
-| Branch Type | Prefix      | Example                      |
-|-------------|-------------|------------------------------|
-| Feature     | `feature/`  | `feature/add-user-profile`   |
+| Branch Type | Prefix     | Example                    |
+| ----------- | ---------- | -------------------------- |
+| Feature     | `feature/` | `feature/add-user-profile` |
 
 ## Commit Messages
 
@@ -42,15 +41,16 @@ To maintain a clean and stable `main` branch, the following protection rules are
 
 - **Direct commits to `main` are not allowed.**  
   All changes must go through a Pull Request.
-  
 - **Pull requests must be reviewed and approved** before being merged. One approver per PR
 
 - **Only squash merges are allowed**, to ensure a linear and clean commit history.
 
 ## Summary
 
- `main` is the only long-living branch.
- All work happens in short-lived `feature/*` branches.
- No `develop` branch — fewer complications.
- Simple flow: branch  code > PR > review > merge.
- 
+svdxsvx dfv,
+sfsf
+fs
+`main` is the only long-living branch.
+All work happens in short-lived `feature/*` branches.
+No `develop` branch — fewer complications.
+Simple flow: branch code > PR > review > merge.
