@@ -1,19 +1,26 @@
-# Naming Conventions for Pages and Components
+# Naming Conventions
 
-## 📄 Pages
+## Pages
 
-- **Location:** All page components should be placed in a `/pages` directory.
-- **Naming Format:** Use **PascalCase** (e.g., `LoginPage`, `DashboardPage`, `UserProfilePage`).
-- **Filename Matches Component:** The filename must exactly match the component name. e.g /pages/LoginPage.jsx or /pages/DashboardPage.
+- All page components should be placed in the **/pages** directory.
+- Page object files should be named in **camelCase**, based on the page name. Example: loginPage.js, cartPage.js
 
-## 🧩 Components
+## Test Blocks (describe/context/it)
 
-- **Location:** Place components inside a `/components` directory, optionally nested by feature or type.
-- **Naming Format:** Use **PascalCase** (e.g., `Header`, `ProductCard`, `SidebarMenu`).
-- **Filename Matches Component:** Ensure the file name matches the component name.
-- **Reusable Components:** Place in `components/common/` if used across multiple pages.
+- Use Gherkin-style phrases to express test flow:
+  **describe**('Component: Given some context', ...)
+  **context**('When user performs an action', ...)
+  **it**('Then the expected result should occur', ...)
+- Be specific and clear. Avoid generic test names like "should log in".
 
-**Example:**
-/components/Header.jsx
-/components/ProductCard.jsx
-/components/common/Loader.jsx
+## Selectors definition
+
+- Define selectors in **/support/selectors.js**;
+- Group selectors by page, with each page defined as a const using **camelCase**;
+- Use **camelCase** for selectors names;
+
+## UI elements localization
+
+- Use an **l10n JSON** file to define all visible texts for pages;
+- Group data by page, with each page as a top-level JSON node.
+- Use camelCase for elements keys;
