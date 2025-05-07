@@ -46,10 +46,6 @@ To maintain a clean and stable `main` branch, the following protection rules are
 - **Only squash merges are allowed**, to ensure a linear and clean commit history.
 
 ## Summary
-
-svdxsvx dfv,
-sfsf
-fs
 `main` is the only long-living branch.
 All work happens in short-lived `feature/*` branches.
 No `develop` branch — fewer complications.

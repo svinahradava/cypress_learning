@@ -1,15 +1,10 @@
-describe('LoginPage: Given Login Page opened', () => {
-  beforeEach(() => {
-    cy.visit('/');
-  });
-
-  function login(username, password) {
-    cy.get(loginPage.username).type(username);
-    cy.get(loginPage.password).type(password);
-    cy.get(loginPage.loginButton).click();
-  }
-
-  context('When user reviews the Login page', () => {
+describe('LoginPage: Given Login Page opened',{ testIsolation: false }, () => {
+ 
+   context('When user reviews the Login page', () => {
+    beforeEach(() => {
+      cy.visit('/'); 
+    });
+    
     it('Then user should see the title', () => {
       cy.contains(l10n.loginPage.title).should('be.visible');
     });
@@ -36,7 +31,7 @@ describe('LoginPage: Given Login Page opened', () => {
     'When STANDARD user enters valid credentials and clicks Login button',
     () => {
       beforeEach(() => {
-        login(users.standardUser.username, users.standardUser.password);
+        cy.login(users.standardUser.username, users.standardUser.password);
       });
       it('Then user should be navigated to the Inventory page', () => {
         cy.url().should('include', '/inventory');
@@ -48,7 +43,7 @@ describe('LoginPage: Given Login Page opened', () => {
     'When LOCKED user enters valid creadentials and clicks Login button',
     () => {
       beforeEach(() => {
-        login(users.lockedUser.username, users.lockedUser.password);
+        cy.login(users.lockedUser.username, users.lockedUser.password);
       });
       it('Then user should see error message about locked user', () => {
         cy.get(loginPage.errorMessage).contains(

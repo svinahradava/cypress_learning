@@ -9,6 +9,7 @@ cypress/videos/
 cypress/screenshots/
 cypress/.cache/
 cypress/coverage/
+cypress/sensitive-data/
 cypress.env.json
 
 # Cypress reports (optional reporters like mochawesome)
