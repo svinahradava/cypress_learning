@@ -8,8 +8,6 @@ We use a simple and effective Git strategy **without a `develop` branch**. All d
 
 - `main` — Stable, production-ready code.
 - `feature/*` — For developing new features.
-- `hotfix/*` — Urgent fixes for production issues.
-- `release/*` — (Optional) Pre-release stabilization and testing.
 
 ## Feature Workflow
 
@@ -25,49 +23,30 @@ We use a simple and effective Git strategy **without a `develop` branch**. All d
 
 5. PR must pass code review and CI checks.
 
-6. Once approved, merge using **Squash and Merge**.
-
-## Hotfix Workflow
-
-1. Create the branch from `main`:  
-   `hotfix/fix-login-error`
-
-2. After the fix:
-   - Merge into `main` (optionally tag a release).
-   - If needed, cherry-pick into active feature branches.
-
-## Release Branches (Optional)
-
-- Use `release/*` branches if a release needs final testing or minor adjustments before deploying:  
-  `release/v1.3.0`
-
-- This allows final QA/fixes without blocking `main`.
+6. Once approved, merge using **squash merges only**.
 
 ## Branch Naming Conventions
 
-| Branch Type | Prefix      | Example                      |
-|-------------|-------------|------------------------------|
-| Feature     | `feature/`  | `feature/add-user-profile`   |
-| Hotfix      | `hotfix/`   | `hotfix/fix-login-bug`       |
-| Release     | `release/`  | `release/v2.0.0`             |
+| Branch Type | Prefix     | Example                    |
+| ----------- | ---------- | -------------------------- |
+| Feature     | `feature/` | `feature/add-user-profile` |
 
 ## Commit Messages
 
 Use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/):
 
+## Branch Protection and Merge Rules
 
-## Merge Rules
+To maintain a clean and stable `main` branch, the following protection rules are enforced:
 
-- All changes go through a Pull Request.
-- Use **Squash and Merge** to keep history clean.
-- `main` stays linear and easy to follow.
-- All commits must pass CI before being merged.
+- **Direct commits to `main` are not allowed.**  
+  All changes must go through a Pull Request.
+- **Pull requests must be reviewed and approved** before being merged. One approver per PR
 
+- **Only squash merges are allowed**, to ensure a linear and clean commit history.
 
 ## Summary
-
- `main` is the only long-living branch.
- All work happens in short-lived `feature/*` branches.
- No `develop` branch — fewer complications.
- Simple flow: branch  code > PR > review > merge.
- 
+`main` is the only long-living branch.
+All work happens in short-lived `feature/*` branches.
+No `develop` branch — fewer complications.
+Simple flow: branch code > PR > review > merge.

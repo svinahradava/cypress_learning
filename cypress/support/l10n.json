@@ -1,0 +1,15 @@
+{
+  "loginPage": {
+    "title": "Swag Labs",
+
+    "loginform": {
+      "username": "Username",
+      "password": "Password",
+      "login": "Login"
+    },
+
+    "errors": {
+      "lockedOutUser": "Epic sadface: Sorry, this user has been locked out."
+    }
+  }
+}

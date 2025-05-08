@@ -9,11 +9,16 @@ cypress/videos/
 cypress/screenshots/
 cypress/.cache/
 cypress/coverage/
+cypress/sensitive-data/
 cypress.env.json
+# But do NOT ignore this file (negation rule)
+!cypress/sensitive-data/env-users.example.json
 
 # Cypress reports (optional reporters like mochawesome)
 cypress/reports/
 mochawesome-report/
+cypress/screenshots
+cypress/videos
 
 # IDE/editor settings
 .vscode/
