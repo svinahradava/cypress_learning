@@ -22,9 +22,21 @@
 //
 //
 // -- This will overwrite an existing command --
+
+import { generalItems } from './selectors';
+
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 Cypress.Commands.add('login', (username, password) => {
-  cy.get(loginPage.username).type(username);
-  cy.get(loginPage.password).type(password);
+  if (username !== '') {
+    cy.get(loginPage.username).type(username);
+  }
+  if (password !== '') {
+    cy.get(loginPage.password).type(password);
+  }
   cy.get(loginPage.loginButton).click();
+});
+
+Cypress.Commands.add('logout', () => {
+  cy.get(generalItems.burgerMenu).click();
+  cy.get(generalItems.logOut).click();
 });
