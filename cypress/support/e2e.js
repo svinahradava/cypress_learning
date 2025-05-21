@@ -14,4 +14,9 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
+import './commands';
+import './selectors';
+import './l10n.json';
+global.loginPage = require('./selectors').loginPage;
+global.l10n = require('./l10n');
+global.users = require('../sensitive-data/dev-users.json');
