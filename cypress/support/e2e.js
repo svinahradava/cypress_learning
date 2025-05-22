@@ -16,6 +16,7 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 import './selectors';
+import './requirements';
 import './l10n.json';
 global.loginPage = require('./selectors').loginPage;
 global.l10n = require('./l10n');

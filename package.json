@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/svinahradava/cypress_learning#readme",
   "devDependencies": {
-    "cypress": "^14.3.0"
+    "cypress": "^14.4.0",
+    "prettier": "^3.5.3"
   }
 }

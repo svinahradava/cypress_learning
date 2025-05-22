@@ -1,8 +1,6 @@
 {
   "loginPage": {
-    "title": "Swag Labs",
-
-    "loginform": {
+      "loginform": {
       "username": "Username",
       "password": "Password",
       "login": "Login"
@@ -14,5 +12,19 @@
       "missingUsername": "Epic sadface: Username is required",
       "missingPassword": "Epic sadface: Password is required"
     }
+  },
+  "generalItems":{
+     "pageTitle": "Swag Labs",
+      "burgerMenu":["All Items","About","Logout","Reset App State"],
+      "sortingOptions": {
+        "nameAsc": "Name (A to Z)",
+        "nameDesc": "Name (Z to A)",
+        "priceAsc": "Price (low to high)",
+        "priceDesc":"Price (low to high)"
+      },
+       "footerText": "© 2025 Sauce Labs. All Rights Reserved."
+  },
+  "inventoryPage":{
+    "tableTitle": "Products"
   }
 }

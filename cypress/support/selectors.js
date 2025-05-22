@@ -13,4 +13,21 @@ export const generalItems = {
   about: '[data-test="about-sidebar-link"]',
   logOut: '[data-test="logout-sidebar-link"]',
   resetAppState: '[data-test="reset-sidebar-link"]',
+  shoppingCartLink: '[data-test="shopping-cart-link"]',
+  sortingControl: '[data-test="product-sort-container"]'
 };
+
+export const Footer = {
+ twitterLink: '[data-test="social-twitter"]',
+ facebookLink: '[data-test="social-facebook"]',
+ linkedinLink: '[data-test="social-linkedin"]',
+ privacyPolicyLink: '[]',
+ termOfServiceLink: '[]'
+};
+
+
+export const inventoryPage ={
+  inventoryContainer: '[data-test="inventory-container"]',
+  inventoryList: '[data-test="inventory-list"]',
+  inventoryItem: '[data-test="inventory-item"]',
+}
