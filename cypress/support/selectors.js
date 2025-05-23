@@ -14,20 +14,22 @@ export const generalItems = {
   logOut: '[data-test="logout-sidebar-link"]',
   resetAppState: '[data-test="reset-sidebar-link"]',
   shoppingCartLink: '[data-test="shopping-cart-link"]',
-  sortingControl: '[data-test="product-sort-container"]'
+  sortingControl: '[data-test="product-sort-container"]',
 };
 
 export const Footer = {
- twitterLink: '[data-test="social-twitter"]',
- facebookLink: '[data-test="social-facebook"]',
- linkedinLink: '[data-test="social-linkedin"]',
- privacyPolicyLink: '[]',
- termOfServiceLink: '[]'
+  twitterLink: '[data-test="social-twitter"]',
+  facebookLink: '[data-test="social-facebook"]',
+  linkedinLink: '[data-test="social-linkedin"]',
+  privacyPolicyLink: '[]',
+  termOfServiceLink: '[]',
 };
 
-
-export const inventoryPage ={
+export const inventoryPage = {
   inventoryContainer: '[data-test="inventory-container"]',
   inventoryList: '[data-test="inventory-list"]',
   inventoryItem: '[data-test="inventory-item"]',
-}
+  inventoryItemName: '[data-test="inventory-item-name"]',
+  inventoryItemDescription: '[data-test="inventory-item-desc"]',
+  inventoryItemPrice: '[data-test="inventory-item-price"]',
+};
