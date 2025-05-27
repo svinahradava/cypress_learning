@@ -20,7 +20,7 @@
       "nameAsc": "Name (A to Z)",
       "nameDesc": "Name (Z to A)",
       "priceAsc": "Price (low to high)",
-      "priceDesc": "Price (low to high)"
+      "priceDesc": "Price (high to low)"
     },
     "footerText": "© 2025 Sauce Labs. All Rights Reserved."
   },

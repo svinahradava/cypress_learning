@@ -2,7 +2,7 @@ import { Footer, generalItems, inventoryPage } from '../../support/selectors';
 import { inventoryPageReq } from '../../support/requirements';
 
 describe('InventoryPage: Given Inventory Page opened', () => {
-  context.skip('InventoryPage: When user reviews the Inventory page', () => {
+  context('InventoryPage: When user reviews the Inventory page', () => {
     beforeEach(() => {
       cy.visit('/');
       cy.login(users.standardUser.username, users.standardUser.password);
@@ -35,7 +35,7 @@ describe('InventoryPage: Given Inventory Page opened', () => {
     });
   });
 
-  context.skip('InventoryPage: When user reviews Footer', () => {
+  context('InventoryPage: When user reviews Footer', () => {
     beforeEach(() => {
       cy.visit('/');
       cy.login(users.standardUser.username, users.standardUser.password);
@@ -153,12 +153,92 @@ describe('InventoryPage: Given Inventory Page opened', () => {
     });
   });
 
-  context.skip('When user adds items to Card', () => {
+  context(
+    'When user reviews sorting control options and checks default sorting',
+    () => {
+      beforeEach(() => {
+        cy.visit('/');
+        cy.login(users.standardUser.username, users.standardUser.password);
+      });
+      it('Then product cards should be sorted by Name Asc', () => {
+        cy.get(inventoryPage.inventoryItemName).then(($items) => {
+          const names = [...$items].map((item) => item.innerText.trim());
+          const sortedNames = [...names].sort();
+          expect(names).to.deep.equal(sortedNames);
+        });
+      });
+
+      it('Then sorting control should contain expected sorting options', () => {
+        const expectedOptions = Object.values(l10n.generalItems.sortingOptions);
+        cy.get(generalItems.sortingControl)
+          .find('option')
+          .then(($options) => {
+            const actualOptions = [...$options].map((opt) =>
+              opt.innerText.trim()
+            );
+            expect(actualOptions).to.deep.equal(expectedOptions);
+          });
+      });
+    }
+  );
+
+  context('When user choses Name descending soring', () => {
     beforeEach(() => {
       cy.visit('/');
       cy.login(users.standardUser.username, users.standardUser.password);
-      cy.
+      cy.get(generalItems.sortingControl).select(
+        l10n.generalItems.sortingOptions.nameDesc
+      );
     });
+    it('Then product cards should be sorted by Name Descending', () => {
+      cy.get(inventoryPage.inventoryItemName).then(($items) => {
+        const names = [...$items].map((item) => item.innerText.trim());
+        const sortedNames = [...names].sort().reverse();
+        expect(names).to.deep.equal(sortedNames);
+      });
+    });
+  });
+
+  context('When user chooses Price ascending soring', () => {
+    beforeEach(() => {
+      cy.visit('/');
+      cy.login(users.standardUser.username, users.standardUser.password);
+      cy.get(generalItems.sortingControl).select(
+        l10n.generalItems.sortingOptions.priceAsc
+      );
+    });
+    it('Then product cards should be sorted by Price ascending', () => {
+      cy.get(inventoryPage.inventoryItemPrice).then(($items) => {
+        const priceStrings = [...$items].map((el) => el.innerText.trim());
+        const prices = priceStrings.map((item) =>
+          parseFloat(item.replace('$', ''))
+        );
+        const sortedPrices = [...prices].sort((a, b) => a - b);
+        expect(prices).to.deep.equal(sortedPrices);
+      });
+    });
+  });
+  context('When user chooses Price desc soring', () => {
+    beforeEach(() => {
+      cy.visit('/');
+      cy.login(users.standardUser.username, users.standardUser.password);
+      cy.get(generalItems.sortingControl).select(
+        l10n.generalItems.sortingOptions.priceDesc
+      );
+    });
+    it('Then product cards should be sorted by Price desc', () => {
+      cy.get(inventoryPage.inventoryItemPrice).then(($items) => {
+        const priceStrings = [...$items].map((el) => el.innerText.trim());
+        const prices = priceStrings.map((item) =>
+          parseFloat(item.replace('$', ''))
+        );
+        const sortedPrices = [...prices].sort((a, b) => b - a);
+        expect(prices).to.deep.equal(sortedPrices);
+      });
+    });
+  });
+
+  context.skip('When user adds items to Card', () => {
     it('Then count of items is shown next to backet icon', () => {});
     it('Then Remove button is shown on Item card', () => {});
   });
@@ -168,9 +248,5 @@ describe('InventoryPage: Given Inventory Page opened', () => {
   });
   context.skip('When user clicks on Product title', () => {});
   context.skip('When user clicks on Basket icon', () => {});
-  context.skip('When user clicks on Sorting Control', () => {});
-  context.skip('When user chooses Name descending soring', () => {});
-  context.skip('When user chooses Price ascending soring', () => {});
-  context.skip('When user chooses Price descending soring', () => {});
   context.skip('When user clicks on Burger menu', () => {});
 });
